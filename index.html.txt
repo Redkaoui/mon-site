@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bienvenue sur mon site</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Bienvenue sur mon site web</h1>
+    <p>Un petit site simple fait en HTML et CSS</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Qui suis-je ?</h2>
+      <p>Je m'appelle Redwane, ingénieur et tuteur de mathématiques en ligne. Je propose du contenu éducatif accessible à tous.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Email : contact@example.com</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - MonSiteWeb</p>
+  </footer>
+</body>
+</html>
