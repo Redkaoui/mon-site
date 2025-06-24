@@ -60,6 +60,7 @@
       cursor: pointer;
       transition: background 0.3s ease;
       margin-top: 1rem;
+      margin-right: 0.5rem;
     }
 
     button:hover {
@@ -93,8 +94,8 @@
     <section id="accueil">
       <h2>Bienvenue</h2>
       <p>Bienvenue sur StudMaths.org. Je vous propose un accompagnement personnalisé en mathématiques.</p>
-      <button onclick="showSection('a-propos')">Qui suis-je ?</button>
-      <button onclick="showSection('services')">Mes services</button>
+      <button onclick="showOnly('a-propos')">Qui suis-je ?</button>
+      <button onclick="showOnly('services')">Mes services</button>
     </section>
 
     <section id="a-propos" class="hidden">
@@ -118,9 +119,16 @@
   </footer>
 
   <script>
-    function showSection(id) {
-      const section = document.getElementById(id);
-      section.classList.remove('hidden');
+    function showOnly(idToShow) {
+      const sections = ['a-propos', 'services'];
+      sections.forEach(id => {
+        const section = document.getElementById(id);
+        if (id === idToShow) {
+          section.classList.remove('hidden');
+        } else {
+          section.classList.add('hidden');
+        }
+      });
     }
   </script>
 </body>
