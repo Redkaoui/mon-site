@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StudMaths.org - Tutorat de Mathématiques</title>
+  <title>StudMath.org - Tutorat de Mathématiques</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
@@ -86,11 +86,24 @@
 </head>
 <body>
   <header>
-    <h1>StudMaths.org</h1>
+    <h1>StudMath.org</h1>
     <p>Le tutorat en mathématiques pour lycéens sérieux</p>
   </header>
 
   <main>
+    <section style="text-align: center; background: #def0ff; padding: 2rem; border-radius: 12px; margin-bottom: 2rem;">
+      <img src="https://img.icons8.com/color/96/teacher.png" alt="avatar" width="96" height="96" style="border-radius: 50%;" />
+      <h2 style="margin-top: 1rem; color: #0057b7;">StudMaths</h2>
+      <p style="font-size: 1.1rem;">Prof particulier de Maths motivant, pédagogue et bienveillant 🥰</p>
+      <div style="font-size: 1.8rem; margin-top: 1rem;">
+        <a href="#" title="Instagram" style="margin: 0 8px; color: #000;">📷</a>
+        <a href="#" title="YouTube" style="margin: 0 8px; color: #000;">▶️</a>
+        <a href="#" title="Facebook" style="margin: 0 8px; color: #000;">📘</a>
+        <a href="#" title="E-mail" style="margin: 0 8px; color: #000;">✉️</a>
+        <a href="#" title="TikTok" style="margin: 0 8px; color: #000;">🎵</a>
+        <a href="#" title="Snapchat" style="margin: 0 8px; color: #000;">👻</a>
+      </div>
+    </section>
     <section id="accueil">
       <h2>Bienvenue</h2>
       <p>Bienvenue sur StudMaths.org. Je vous propose un accompagnement personnalisé en mathématiques.</p>
@@ -113,13 +126,12 @@
       </ul>
     </section>
       <div style="text-align: center; margin-bottom: 2rem;">
-      <a href="mailto:studmath.contact@gmail.com">
-        <button style="background-color: #007bff;">Me contacter par e-mail</button>
-      </a><br><br>
-      <a href="https://wa.me/33780882994" target="_blank">
-        <button style="background-color: #25D366;">Me contacter sur WhatsApp</button>
-      </a>
-    </div>
+  <button style="background-color: #007bff;" onclick="toggleContact('email-contact')">Me contacter par e-mail</button>
+  <div id="email-contact" class="hidden" style="margin-top: 10px;">📧 studmath.contact@gmail.com</div>
+  <br><br>
+  <button style="background-color: #25D366;" onclick="toggleContact('whatsapp-contact')">Me contacter sur WhatsApp</button>
+  <div id="whatsapp-contact" class="hidden" style="margin-top: 10px;">📱 +33 7 80 88 29 94</div>
+</div>
   </main>
 
   <footer>
@@ -138,6 +150,10 @@
         }
       });
     }
-  </script>
+    function toggleContact(id) {
+    const contact = document.getElementById(id);
+    contact.classList.toggle('hidden');
+  }
+</script>
 </body>
 </html>
