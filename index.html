@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StudMaths - Tutorat de Mathématiques</title>
+  <title>StudMaths.org - Tutorat de Mathématiques</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
@@ -59,6 +59,7 @@
       font-size: 1rem;
       cursor: pointer;
       transition: background 0.3s ease;
+      margin-top: 1rem;
     }
 
     button:hover {
@@ -76,32 +77,32 @@
       background: #e0e0e0;
       font-size: 0.9rem;
     }
+
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>StudMaths</h1>
+    <h1>StudMaths.org</h1>
     <p>Le tutorat en mathématiques pour lycéens sérieux</p>
   </header>
 
   <main>
     <section id="accueil">
       <h2>Bienvenue</h2>
-      <p>Bienvenue sur StudMaths. Je vous propose un accompagnement personnalisé en mathématiques.</p>
-      <a href="#a-propos">
-        <button>Qui suis-je ?</button>
-      </a>
+      <p>Bienvenue sur StudMaths.org. Je vous propose un accompagnement personnalisé en mathématiques.</p>
+      <button onclick="toggleSection('a-propos')">Qui suis-je ?</button>
     </section>
 
-    <section id="a-propos">
+    <section id="a-propos" class="hidden">
       <h2>Qui suis-je ?</h2>
       <p>Je m'appelle Redwane, ingénieur et tuteur de mathématiques passionné. J'aide les lycéens à réussir grâce à des cours clairs et adaptés.</p>
-      <a href="#services">
-        <button>Mes services</button>
-      </a>
+      <button onclick="toggleSection('services')">Mes services</button>
     </section>
 
-    <section id="services">
+    <section id="services" class="hidden">
       <h2>Mes services</h2>
       <ul>
         <li>Cours en binôme en ligne</li>
@@ -113,7 +114,14 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 StudMaths - Tous droits réservés</p>
+    <p>&copy; 2025 StudMaths.org - Tous droits réservés</p>
   </footer>
+
+  <script>
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      section.classList.toggle('hidden');
+    }
+  </script>
 </body>
 </html>
