@@ -84,29 +84,11 @@
     }
 
     blockquote {
-      border-left: 4px solid #0057b7;
-      margin: 1rem 0;
-      padding-left: 1rem;
-      font-style: italic;
-      color: #444;
-      background: #f9faff;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      background: #f8f8f8;
+      padding: 1rem;
+      border-left: 4px solid #007bff;
+      margin-bottom: 1rem;
     }
-
-    /* Styles pour les icônes sociales */
-    .social-icons a {
-      margin: 0 8px;
-      color: #000;
-      font-size: 1.5rem;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      color: #0057b7;
-    }
-
   </style>
 </head>
 <body>
@@ -120,45 +102,26 @@
       <img src="https://img.icons8.com/color/96/teacher.png" alt="avatar" width="96" height="96" style="border-radius: 50%;" />
       <h2 style="margin-top: 1rem; color: #0057b7;">StudMaths</h2>
       <p style="font-size: 1.1rem;">Prof particulier de Maths motivant, pédagogue et bienveillant 🥰</p>
-      <div class="social-icons" style="font-size: 1.8rem; margin-top: 1rem;">
-        <a href="#" title="Instagram">📷</a>
-        <a href="#" title="YouTube">▶️</a>
-        <a href="#" title="Facebook">📘</a>
-        <a href="#" title="E-mail">✉️</a>
-        <a href="#" title="TikTok">🎵</a>
-        <a href="#" title="Snapchat">👻</a>
+      <div style="font-size: 1.8rem; margin-top: 1rem;">
+        <a href="#" title="Instagram" style="margin: 0 8px; color: #000;">📷</a>
+        <a href="#" title="YouTube" style="margin: 0 8px; color: #000;">▶️</a>
+        <a href="#" title="Facebook" style="margin: 0 8px; color: #000;">📘</a>
+        <a href="#" title="E-mail" style="margin: 0 8px; color: #000;">✉️</a>
+        <a href="#" title="TikTok" style="margin: 0 8px; color: #000;">🎵</a>
+        <a href="#" title="Snapchat" style="margin: 0 8px; color: #000;">👻</a>
       </div>
     </section>
-
     <section id="accueil">
       <h2>Bienvenue</h2>
       <p>Bienvenue sur StudMaths.org. Je vous propose un accompagnement personnalisé en mathématiques.</p>
       <button onclick="showOnly('a-propos')">Qui suis-je ?</button>
-      <button onclick="showOnly('video-presentation')">Vidéo de présentation</button>
-      <button onclick="showOnly('temoignages')">Témoignages clients</button>
       <button onclick="showOnly('services')">Mes services</button>
+      <button onclick="showOnly('avis')">Avis clients</button>
     </section>
 
     <section id="a-propos" class="hidden">
       <h2>Qui suis-je ?</h2>
       <p>Je m'appelle Redwane, ingénieur et tuteur de mathématiques passionné. J'aide les lycéens à réussir grâce à des cours clairs et adaptés.</p>
-    </section>
-
-    <section id="video-presentation" class="hidden">
-      <h2>Vidéo de présentation</h2>
-      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;border-radius:12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
-          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" 
-          allowfullscreen 
-          title="Vidéo de présentation StudMaths"></iframe>
-      </div>
-    </section>
-
-    <section id="temoignages" class="hidden">
-      <h2>Témoignages clients</h2>
-      <blockquote>« Redwane m’a beaucoup aidé à comprendre les maths, ses cours sont clairs et motivants ! » – Sophie</blockquote>
-      <blockquote>« Grâce à StudMaths, j’ai progressé rapidement et réussi mon bac ! » – Karim</blockquote>
-      <blockquote>« Prof très pédagogue et à l’écoute, je recommande sans hésiter. » – Lina</blockquote>
     </section>
 
     <section id="services" class="hidden">
@@ -169,6 +132,20 @@
         <li>Fiches et exercices corrigés</li>
         <li>Préparation au bac</li>
       </ul>
+    </section>
+
+    <section id="avis" class="hidden">
+      <h2>Ce que disent mes élèves</h2>
+      <blockquote>
+        ⭐⭐⭐⭐⭐<br>
+        “Grâce à Redwane, j’ai repris confiance en maths. Très pédagogue et toujours à l’écoute.”  
+        <br><small>— Sara, Terminale STMG</small>
+      </blockquote>
+      <blockquote>
+        ⭐⭐⭐⭐⭐<br>
+        “Méthodique, sympa, et efficace. Il m’a aidé à obtenir 17/20 au bac !”  
+        <br><small>— Yanis, Première</small>
+      </blockquote>
     </section>
 
     <div style="text-align: center; margin-bottom: 2rem;">
@@ -186,7 +163,7 @@
 
   <script>
     function showOnly(idToShow) {
-      const sections = ['a-propos', 'video-presentation', 'temoignages', 'services'];
+      const sections = ['a-propos', 'services', 'avis'];
       sections.forEach(id => {
         const section = document.getElementById(id);
         if (id === idToShow) {
