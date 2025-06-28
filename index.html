@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StudMath - Tutorat de Mathématiques</title>
+  <title>StudMath.org - Tutorat de Mathématiques</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
@@ -88,19 +88,10 @@
     }
   </style>
 </head>
-<script>
-  document.getElementById("btn-reserver").addEventListener("click", function () {
-    const section = document.getElementById("reservation");
-    section.classList.remove("hidden");
-    section.scrollIntoView({ behavior: "smooth" });
-  });
-</script>
-
-  
 <body>
   <header>
     <h1>StudMath.org</h1>
-    <p>Le tutorat en mathématiques pour lycéens qui cherchent l'excellence</p>
+    <p>Le tutorat en mathématiques pour lycéens sérieux</p>
   </header>
 
   <main>
@@ -121,7 +112,7 @@
       <h2>Bienvenue</h2>
       <p style="font-size: 1.1rem; line-height: 1.6;">
         🎓 Bienvenue sur <strong>StudMath</strong> — votre destination de confiance pour progresser en mathématiques, avec motivation et bienveillance 🌟.<br><br>
-        📘 Que vous soyez en seconde, première, terminale ou même en prépa, ici vous trouverez un accompagnement humain et surtout personnalisé, clair et adapté à vos besoins.<br><br>
+        📘 Que vous soyez en seconde, première, terminale ou même en prépa, ici vous trouverez un accompagnement humain, clair et adapté à vos besoins.<br><br>
         💡 Comprendre les maths devient plus simple, plus fluide et même agréable avec une méthode interactive et des explications concrètes !<br><br>
         🚀 Rejoignez dès maintenant les nombreux élèves satisfaits et donnez un nouvel élan à votre réussite scolaire !<br><br>
         👉 Cliquez ci-dessous pour en savoir plus :
@@ -129,8 +120,7 @@
       <button onclick="showOnly('a-propos')">Qui suis-je ?</button>
       <button onclick="showOnly('services')">Mes services</button>
       <button onclick="showOnly('avis')">Avis clients</button>
-      <button onclick="showOnly('reservation')">Réserver une séance</button>
-
+      <button id="btn-reserver" style="background-color: #ffc107; color: #000;">Réserver une séance</button>
     </section>
 
     <section id="a-propos" class="hidden">
@@ -144,22 +134,6 @@
       </p>
     </section>
 
-<section id="reservation" class="hidden">
-  <h2>Réserver une séance</h2>
-  <p>Choisissez directement un créneau qui vous convient :</p>
-  <div style="overflow: hidden; max-width: 100%; width: 100%;">
-    <iframe src="https://calendly.com/studmath-contact/30min"
-            width="100%"
-            height="700"
-            frameborder="0"
-            scrolling="no"
-            style="border: none; min-width: 320px;">
-    </iframe>
-  </div>
-</section>
-
-
-    
     <section id="services" class="hidden">
       <h2>Mes services</h2>
       <ul>
@@ -170,10 +144,9 @@
       </ul>
     </section>
 
-
     <section id="avis" class="hidden">
       <h2>Ce que disent mes élèves</h2>
-      <blockquote><span class="stars">★★★★★</span> Ridwane est un professeur de mathématiques brillant [...] <br><strong>Azzedine – Prépa MP</strong></blockquote>
+      <blockquote><span class="stars">★★★★★</span> Ridwane est un professeur de mathématiques brillant [...] <br><strong>Azzedine – MP</strong></blockquote>
       <blockquote><span class="stars">★★★★★</span> Depuis deux ans, Ridwane accompagne mon fils en maths [...] <br><strong>Chloé – Seconde générale</strong></blockquote>
       <blockquote><span class="stars">★★★★★</span> Il est très patient et essaye plusieurs façons différentes [...] <br><strong>Zhenya – Terminale spé maths</strong></blockquote>
       <blockquote><span class="stars">★★★★★</span> [...] Monsieur Ridwane Khyaoui les a. Grâce à lui, j’ai de grandes facilités [...]<br><strong>Sarah – 1ère STMG</strong></blockquote>
@@ -188,6 +161,22 @@
       <blockquote><span class="stars">★★★★★</span> Nous recommandons à 1000 % Ridwane ! C’est un super prof [...]<br><strong>Gladys – Seconde générale</strong></blockquote>
       <blockquote><span class="stars">★★★★★</span> Professeur très sympathique et très professionnel [...]<br><strong>Christine – Bac spé maths</strong></blockquote>
       <blockquote><span class="stars">★★★★★</span> Excellent professeur, très pédagogue, qui s’adapte très facilement [...]<br><strong>Mayes – Prépa MP</strong></blockquote>
+    </section>
+
+    <section id="reservation" class="hidden">
+      <h2>Réserver une séance</h2>
+      <p>Choisissez directement un créneau qui vous convient :</p>
+      <div style="overflow: hidden; max-width: 100%; width: 100%;">
+        <iframe 
+          src="https://calendly.com/studmath-contact/30min"
+          width="100%" 
+          height="700" 
+          frameborder="0" 
+          scrolling="no"
+          style="border: none; min-width: 320px;" 
+          title="Réservation de séance StudMath">
+        </iframe>
+      </div>
     </section>
 
     <div style="text-align: center; margin-bottom: 2rem;">
@@ -215,10 +204,19 @@
         }
       });
     }
+
     function toggleContact(id) {
       const contact = document.getElementById(id);
       contact.classList.toggle('hidden');
     }
+
+    document.getElementById("btn-reserver").addEventListener("click", function () {
+      const section = document.getElementById("reservation");
+      section.classList.toggle("hidden");
+      if (!section.classList.contains("hidden")) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    });
   </script>
 </body>
 </html>
