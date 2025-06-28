@@ -5,7 +5,233 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StudMath.org - Tutorat de Mathématiques</title>
   <link rel="stylesheet" href="style.css" />
+  <style><!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudMath - Tutorat de Mathématiques</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f2f2;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(to right, #0057b7, #007bff);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.3rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      animation: fadeIn 1.5s ease;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      color: #0057b7;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    button {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 1rem 0.5rem 0 0;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    button:hover {
+      background: #218838;
+      transform: scale(1.05);
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    blockquote {
+      background: #f8f8f8;
+      padding: 1rem;
+      border-left: 4px solid #007bff;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .stars {
+      color: #f5c518;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #e0e0e0;
+      font-size: 0.9rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>StudMath</h1>
+    <p>Le tutorat de mathématiques moderne et motivant ✨</p>
+  </header>
+
+  <main>
+    <section style="text-align: center; background: #def0ff; padding: 2rem; border-radius: 12px;">
+      <img src="https://img.icons8.com/color/96/teacher.png" alt="avatar" width="96" height="96" style="border-radius: 50%;" />
+      <h2 style="color:#0057b7; margin-top: 1rem;">StudMath</h2>
+      <p style="font-size: 1.1rem;">Prof particulier de Maths motivant, pédagogue et bienveillant 🥰</p>
+      <div class="social-icons" style="margin-top: 1rem;">
+        <a href="#" title="Instagram">📷</a>
+        <a href="#" title="YouTube">▶️</a>
+        <a href="#" title="Facebook">📘</a>
+        <a href="mailto:studmath.contact@gmail.com" title="E-mail">✉️</a>
+        <a href="https://www.tiktok.com/@redkaoui?_t=ZM-8xZG1t0gf6G&_r=1" target="_blank" title="TikTok">🎵</a>
+      </div>
+    </section>
+
+    <section id="accueil" class="visible">
+      <h2>Bienvenue</h2>
+      <p style="font-size: 1.1rem;">Bienvenue sur <strong style="color:#007bff; font-size: 1.2rem;">StudMath</strong>. Je vous propose un accompagnement personnalisé et motivant en mathématiques, adapté à votre niveau et à vos objectifs. 🚀</p>
+      <button onclick="showOnly('a-propos')">Qui suis-je ?</button>
+      <button onclick="showOnly('services')">Mes services</button>
+      <button onclick="showOnly('avis')">Avis clients</button>
+    </section>
+
+    <section id="a-propos" class="hidden">
+      <h2>Qui suis-je ?</h2>
+      <p>Bonjour ! Je suis Ridwane Khyaoui, j'ai 32 ans, un tuteur expérimenté en mathématiques.<br><br>
+        Avec 11 années d'expérience, j'ai travaillé avec des élèves de tous niveaux. Mon expertise couvre l'algèbre, la géométrie, l’analyse, les probabilités et les statistiques. J’adapte mes méthodes aux besoins de chaque élève.<br><br>
+        Ma méthode est interactive : exemples concrets, exercices variés, questions encouragées !<br><br>
+        Je propose des sessions flexibles en visioconférence avec un suivi par mail entre les séances.<br><br>
+        Si vous voulez progresser en maths, je suis là pour vous accompagner vers le succès. 💪</p>
+    </section>
+
+    <section id="services" class="hidden">
+      <h2>Mes services</h2>
+      <ul>
+        <li>Cours en binôme en ligne</li>
+        <li>Suivi hebdomadaire structuré</li>
+        <li>Fiches & exercices personnalisés</li>
+        <li>Préparation intensive au bac</li>
+      </ul>
+    </section>
+
+    <section id="avis" class="hidden">
+      <h2>Ce que disent mes élèves</h2>
+      <blockquote><span class="stars">★★★★★</span> Ridwane est un professeur brillant, clair et bienveillant. Mon fils a intégré une prépa scientifique grâce à lui !<br><strong>Azzedine – MP</strong></blockquote>
+      <blockquote><span class="stars">★★★★★</span> Toujours patient et à l’écoute. Ridwane aide mon fils à progresser depuis 2 ans !<br><strong>Chloé – Seconde</strong></blockquote>
+      <blockquote><span class="stars">★★★★★</span> Grâce à ses explications innovantes, j’ai eu 19 au bac !<br><strong>Rayhane – Bac spé maths</strong></blockquote>
+    </section>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <button style="background-color: #007bff;" onclick="toggleContact('email-contact')">Me contacter par e-mail</button>
+      <div id="email-contact" class="hidden" style="margin-top: 10px;">📧 studmath.contact@gmail.com</div>
+      <br><br>
+      <button style="background-color: #25D366;" onclick="toggleContact('whatsapp-contact')">Me contacter sur WhatsApp</button>
+      <div id="whatsapp-contact" class="hidden" style="margin-top: 10px;">📱 +33 7 80 88 29 94</div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 StudMath - Tous droits réservés</p>
+  </footer>
+
+  <script>
+    function showOnly(idToShow) {
+      const sections = ['a-propos', 'services', 'avis'];
+      sections.forEach(id => {
+        document.getElementById(id).classList.add('hidden');
+      });
+      document.getElementById(idToShow).classList.remove('hidden');
+    }
+
+    function toggleContact(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('hidden');
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
