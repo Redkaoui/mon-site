@@ -120,6 +120,8 @@
       <button onclick="showOnly('a-propos')">Qui suis-je ?</button>
       <button onclick="showOnly('services')">Mes services</button>
       <button onclick="showOnly('avis')">Avis clients</button>
+      <button onclick="showOnly('reservation')">Réserver une séance</button>
+
     </section>
 
     <section id="a-propos" class="hidden">
@@ -133,6 +135,22 @@
       </p>
     </section>
 
+<section id="reservation" class="hidden">
+  <h2>Réserver une séance</h2>
+  <p>Choisissez directement un créneau qui vous convient :</p>
+  <div style="overflow: hidden; max-width: 100%; width: 100%;">
+    <iframe src="https://calendly.com/studmath-contact/30min"
+            width="100%"
+            height="700"
+            frameborder="0"
+            scrolling="no"
+            style="border: none; min-width: 320px;">
+    </iframe>
+  </div>
+</section>
+
+
+    
     <section id="services" class="hidden">
       <h2>Mes services</h2>
       <ul>
