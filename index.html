@@ -25,19 +25,11 @@
     header h1 {
       margin: 0;
       font-size: 2.5rem;
-      font-weight: 900;
-      font-family: 'Poppins', sans-serif;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
     }
 
     header p {
       margin: 0.5rem 0 0;
-      font-size: 1.3rem;
-      font-weight: 600;
-      font-style: italic;
-      letter-spacing: 0.05em;
+      font-size: 1.2rem;
     }
 
     main {
@@ -58,30 +50,32 @@
       margin-bottom: 1rem;
     }
 
-    /* Style spécial pour la section bienvenue */
+    /* Nouveau style pour la section "Bienvenue" */
     #accueil {
-      background: linear-gradient(135deg, #a8d0ff, #0057b7);
+      background: linear-gradient(135deg, #007bff 0%, #0057b7 100%);
       color: white;
-      padding: 2.5rem 2rem;
-      border-radius: 16px;
-      box-shadow: 0 8px 15px rgba(0, 87, 183, 0.3);
+      border-radius: 12px;
+      padding: 3rem 2rem;
       text-align: center;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
     }
+
     #accueil h2 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 900;
+      letter-spacing: 0.05em;
       margin-bottom: 1rem;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
-      letter-spacing: 0.1em;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.25);
+      font-family: 'Segoe UI Black', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
     #accueil p {
-      font-size: 1.4rem;
-      font-weight: 600;
-      max-width: 700px;
+      font-size: 1.3rem;
+      max-width: 600px;
       margin: 0 auto;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
       line-height: 1.5;
+      font-weight: 500;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
     }
 
     button {
@@ -108,74 +102,4 @@
 
     footer {
       text-align: center;
-      padding: 1rem;
-      background: #e0e0e0;
-      font-size: 0.9rem;
-    }
-
-    .hidden {
-      display: none;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>StudMath</h1>
-    <p>Le tutorat en mathématiques pour lycéens sérieux</p>
-  </header>
-
-  <main>
-    <section id="accueil">
-      <h2>Bienvenue</h2>
-      <p>Bienvenue sur StudMath. Je vous propose un accompagnement personnalisé en mathématiques.</p>
-      <button onclick="showOnly('a-propos')">Qui suis-je ?</button>
-      <button onclick="showOnly('services')">Mes services</button>
-    </section>
-
-    <section id="a-propos" class="hidden">
-      <h2>Qui suis-je ?</h2>
-      <p>Je m'appelle Redwane, ingénieur et tuteur de mathématiques passionné. J'aide les lycéens à réussir grâce à des cours clairs et adaptés.</p>
-    </section>
-
-    <section id="services" class="hidden">
-      <h2>Mes services</h2>
-      <ul>
-        <li>Cours en binôme en ligne</li>
-        <li>Suivi hebdomadaire</li>
-        <li>Fiches et exercices corrigés</li>
-        <li>Préparation au bac</li>
-      </ul>
-    </section>
-
-    <div style="text-align: center; margin-bottom: 2rem;">
-      <button style="background-color: #007bff;" onclick="toggleContact('email-contact')">Me contacter par e-mail</button>
-      <div id="email-contact" class="hidden" style="margin-top: 10px;">📧 studmath.contact@gmail.com</div>
-      <br><br>
-      <button style="background-color: #25D366;" onclick="toggleContact('whatsapp-contact')">Me contacter sur WhatsApp</button>
-      <div id="whatsapp-contact" class="hidden" style="margin-top: 10px;">📱 +33 7 80 88 29 94</div>
-    </div>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 StudMath - Tous droits réservés</p>
-  </footer>
-
-  <script>
-    function showOnly(idToShow) {
-      const sections = ['a-propos', 'services'];
-      sections.forEach(id => {
-        const section = document.getElementById(id);
-        if (id === idToShow) {
-          section.classList.remove('hidden');
-        } else {
-          section.classList.add('hidden');
-        }
-      });
-    }
-    function toggleContact(id) {
-      const contact = document.getElementById(id);
-      contact.classList.toggle('hidden');
-    }
-  </script>
-</body>
-</html>
+      padding: 1r
