@@ -142,3 +142,56 @@
         <li>Préparation au bac</li>
       </ul>
     </section>
+
+
+    <section id="avis" class="hidden">
+      <h2>Ce que disent mes élèves</h2>
+      <blockquote><span class="stars">★★★★★</span> Ridwane est un professeur de mathématiques brillant [...] <br><strong>Azzedine – MP</strong></blockquote>
+      <blockquote><span class="stars">★★★★★</span> Depuis deux ans, Ridwane accompagne mon fils en maths [...] <br><strong>Chloé – Seconde générale</strong></blockquote>
+      <blockquote><span class="stars">★★★★★</span> Il est très patient et essaye plusieurs façons différentes [...] <br><strong>Zhenya – Terminale spé maths</strong></blockquote>
+      <blockquote><span class="stars">★★★★★</span> [...] Monsieur Ridwane Khyaoui les a. Grâce à lui, j’ai de grandes facilités [...]<br><strong>Sarah – 1ère STMG</strong></blockquote>
+      <blockquote><span class="stars">★★★★★</span> Ma fille a fait énormément de progrès en mathématiques [...]<br><strong>Hélène – Terminale spé maths</strong></blockquote>
+      <blockquote><span class="stars">★★★★★</span> Ridwane est un professeur patient, à l’écoute [...]<br><strong>Allison – 1ère spé maths</strong></blockquote>
+      <blockquote><span class="stars">★★★★★</span> C’est un très bon professeur, il m’aide et m’explique [...]<br><strong>Shreyank – Terminale spé maths</strong></blockquote>
+      <blockquote><span class="stars">★★★★★</span> Excellent professeur, il donne des explications très claires [...]<br><strong>Lina – Terminale maths complémentaires</strong></blockquote>
+      <blockquote><span class="stars">★★★★★</span> Ridwane est un super prof qui sait bien apprendre [...]<br><strong>Lou – Terminale spé maths + maths expertes</strong></blockquote>
+      <blockquote><span class="stars">★★★★★</span> Très bon prof, attentif et explique bien. Rien à dire.<br><strong>Nadim – 3e collège</strong></blockquote>
+      <blockquote><span class="stars">★★★★★</span> [...] j'ai rencontré Ridwane via une plateforme de soutien scolaire [...]<br><strong>Rayhane – Bac spé maths</strong></blockquote>
+      <blockquote><span class="stars">★★★★★</span> Cela fait deux ans que je travaille avec Ridwane. [...]<br><strong>Tess – 1ère bac spé maths</strong></blockquote>
+      <blockquote><span class="stars">★★★★★</span> Nous recommandons à 1000 % Ridwane ! C’est un super prof [...]<br><strong>Gladys – Seconde générale</strong></blockquote>
+      <blockquote><span class="stars">★★★★★</span> Professeur très sympathique et très professionnel [...]<br><strong>Christine – Bac spé maths</strong></blockquote>
+      <blockquote><span class="stars">★★★★★</span> Excellent professeur, très pédagogue, qui s’adapte très facilement [...]<br><strong>Mayes – Prépa MP</strong></blockquote>
+    </section>
+
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <button style="background-color: #007bff;" onclick="toggleContact('email-contact')">Me contacter par e-mail</button>
+      <div id="email-contact" class="hidden" style="margin-top: 10px;">📧 studmath.contact@gmail.com</div>
+      <br><br>
+      <button style="background-color: #25D366;" onclick="toggleContact('whatsapp-contact')">Me contacter sur WhatsApp</button>
+      <div id="whatsapp-contact" class="hidden" style="margin-top: 10px;">📱 +33 7 80 88 29 94</div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 StudMath.org - Tous droits réservés</p>
+  </footer>
+
+  <script>
+    function showOnly(idToShow) {
+      const sections = ['a-propos', 'services', 'avis'];
+      sections.forEach(id => {
+        const section = document.getElementById(id);
+        if (id === idToShow) {
+          section.classList.remove('hidden');
+        } else {
+          section.classList.add('hidden');
+        }
+      });
+    }
+    function toggleContact(id) {
+      const contact = document.getElementById(id);
+      contact.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
