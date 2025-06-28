@@ -1,115 +1,17 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StudMath - Tutorat de Mathématiques</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f0f4f8;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    header {
-      background: linear-gradient(to right, #0057b7, #007bff);
-      color: white;
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    }
-
-    .hero {
-      text-align: center;
-      background: #e6f0ff;
-      padding: 2rem;
-      border-radius: 12px;
-      margin-bottom: 2rem;
-    }
-
-    .hero h2 {
-      font-size: 2rem;
-      color: #0057b7;
-    }
-
-    .hero img {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-    }
-
-    .hero .icons a {
-      font-size: 1.5rem;
-      margin: 0 10px;
-      text-decoration: none;
-      color: #000;
-    }
-
-    section {
-      margin-bottom: 2rem;
-    }
-
-    h2 {
-      color: #0057b7;
-      margin-bottom: 1rem;
-    }
-
-    button {
-      background-color: #28a745;
-      color: white;
-      padding: 0.7rem 1.2rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      margin-right: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #218838;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    blockquote {
-      background: #f9f9f9;
-      border-left: 5px solid #007bff;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-      font-style: italic;
-    }
-
-    .stars {
-      color: #f5c518;
-      font-size: 1.1rem;
+<script>
+  function showOnly(idToShow) {
+    const sections = ['a-propos', 'services', 'avis'];
+    sections.forEach(id => {
+      const section = document.getElementById(id);
+      if (id === idToShow) {
+        section.classList.remove('hidden');
+      } else {
+        section.classList.add('hidden');
+      }
+    });
+  }
+  function toggleContact(id) {
+    const contact = document.getElementById(id);
+    contact.classList.toggle('hidden');
+  }
+</script>
