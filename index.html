@@ -88,6 +88,15 @@
     }
   </style>
 </head>
+<script>
+  document.getElementById("btn-reserver").addEventListener("click", function () {
+    const section = document.getElementById("reservation");
+    section.classList.remove("hidden");
+    section.scrollIntoView({ behavior: "smooth" });
+  });
+</script>
+
+  
 <body>
   <header>
     <h1>StudMath.org</h1>
