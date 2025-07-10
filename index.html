@@ -95,7 +95,34 @@
   </header>
 
   <main>
-    <!-- Sections précédentes inchangées -->
+    <!-- SECTION ACCUEIL SIMPLIFIÉE POUR GAIN D'ESPACE -->
+    <section id="accueil">
+      <h2>Bienvenue</h2>
+      <p>Bienvenue sur StudMath, cours de maths en ligne pour lycéens motivés. 👨‍🏫📚</p>
+      <button onclick="showOnly('a-propos')">Qui suis-je ?</button>
+      <button onclick="showOnly('services')">Mes services</button>
+      <button onclick="showOnly('avis')">Avis clients</button>
+      <button id="btn-reserver" style="background-color: #ffc107; color: #000;">Réserver une séance</button>
+    </section>
+
+    <section id="a-propos" class="hidden">
+      <h2>Qui suis-je ?</h2>
+      <p>Je suis Ridwane Khyaoui, professeur particulier de maths depuis 11 ans. Passionné, bienveillant et très pédagogue.</p>
+    </section>
+
+    <section id="services" class="hidden">
+      <h2>Mes services</h2>
+      <ul>
+        <li>Cours en binôme en ligne</li>
+        <li>Suivi hebdomadaire</li>
+        <li>Préparation au bac</li>
+      </ul>
+    </section>
+
+    <section id="avis" class="hidden">
+      <h2>Ce que disent mes élèves</h2>
+      <blockquote><span class="stars">★★★★★</span> Ridwane est un excellent prof ! Merci pour tout !<br><strong>Élève anonyme</strong></blockquote>
+    </section>
 
     <section id="reservation" class="hidden">
       <h2>Réserver une séance</h2>
@@ -123,34 +150,59 @@
       </div>
     </section>
 
-    <script>
-      document.querySelectorAll('input[name="formule"]').forEach(radio => {
-        radio.addEventListener('change', function () {
-          const frame = document.getElementById("calendly-frame");
-          const infoBox = document.getElementById("formule-info");
-          const value = this.value;
-
-          if (value === "binome") {
-            frame.src = "https://calendly.com/studmath-contact/30min";
-            infoBox.innerHTML = "<strong>Formule binôme :</strong><br>👥 Travail collaboratif avec un autre élève du même niveau. <br><br>💳 Le paiement s’effectue via Wise. Un lien personnalisé vous sera envoyé après réservation.";
-            infoBox.style.display = "block";
-          } else if (value === "individuelle") {
-            frame.src = "https://calendly.com/studmath-contact/30min?type=individuelle";
-            infoBox.innerHTML = "<strong>Formule individuelle :</strong><br>📌 Si tu souhaites une séance personnalisée 100% adaptée à ton rythme, opte pour cette formule. C’est idéal si tu veux poser toutes tes questions sans partage de temps.<br><br>💳 Le paiement s’effectue via Wise. Un lien de paiement personnalisé vous sera envoyé après réservation.";
-            infoBox.style.display = "block";
-          } else if (value === "eleve") {
-            frame.src = "https://calendly.com/studmath-contact/30min?type=eleve";
-            infoBox.innerHTML = "<strong>Formule groupe :</strong><br>👥 Une formule économique et dynamique pour apprendre avec 3 autres élèves du même niveau.<br><br>💳 Le paiement s’effectue via Wise. Un lien de paiement personnalisé vous sera envoyé après réservation.";
-            infoBox.style.display = "block";
-          }
-        });
-      });
-    </script>
+    <div style="text-align: center; margin-top: 2rem;">
+      <button style="background-color: #007bff;" onclick="toggleContact('email-contact')">Me contacter par e-mail</button>
+      <div id="email-contact" class="hidden" style="margin-top: 10px;">📧 studmath.contact@gmail.com</div>
+    </div>
 
   </main>
 
   <footer>
     <p>&copy; 2025 StudMath.org - Tous droits réservés</p>
   </footer>
+
+  <script>
+    function showOnly(idToShow) {
+      const sections = ['a-propos', 'services', 'avis', 'reservation'];
+      sections.forEach(id => {
+        const section = document.getElementById(id);
+        if (id === idToShow) {
+          section.classList.remove('hidden');
+        } else {
+          section.classList.add('hidden');
+        }
+      });
+    }
+
+    function toggleContact(id) {
+      const contact = document.getElementById(id);
+      contact.classList.toggle('hidden');
+    }
+
+    document.getElementById("btn-reserver").addEventListener("click", function () {
+      showOnly("reservation");
+    });
+
+    document.querySelectorAll('input[name="formule"]').forEach(radio => {
+      radio.addEventListener('change', function () {
+        const frame = document.getElementById("calendly-frame");
+        const infoBox = document.getElementById("formule-info");
+        const value = this.value;
+
+        if (value === "binome") {
+          frame.src = "https://calendly.com/studmath-contact/30min";
+          infoBox.innerHTML = "<strong>Formule binôme :</strong><br>👥 Travail collaboratif avec un autre élève du même niveau. <br><br>💳 Le paiement s’effectue via Wise. Un lien personnalisé vous sera envoyé après réservation.";
+        } else if (value === "individuelle") {
+          frame.src = "https://calendly.com/studmath-contact/30min?type=individuelle";
+          infoBox.innerHTML = "<strong>Formule individuelle :</strong><br>📌 Si tu souhaites une séance personnalisée 100% adaptée à ton rythme, opte pour cette formule. C’est idéal si tu veux poser toutes tes questions sans partage de temps.<br><br>💳 Le paiement s’effectue via Wise. Un lien de paiement personnalisé vous sera envoyé après réservation.";
+        } else if (value === "eleve") {
+          frame.src = "https://calendly.com/studmath-contact/30min?type=eleve";
+          infoBox.innerHTML = "<strong>Formule groupe :</strong><br>👥 Une formule économique et dynamique pour apprendre avec 3 autres élèves du même niveau.<br><br>💳 Le paiement s’effectue via Wise. Un lien de paiement personnalisé vous sera envoyé après réservation.";
+        }
+
+        infoBox.style.display = "block";
+      });
+    });
+  </script>
 </body>
 </html>
