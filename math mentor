@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudMath | Excellence en Mathématiques</title>
+  <style>
+    body {margin:0;font-family:Arial, sans-serif;background:#0f172a;color:#fff;}
+    header {padding:20px 40px;display:flex;justify-content:space-between;align-items:center;background:#020617;}
+    header h1 {color:#38bdf8;}
+    nav a {color:white;margin-left:20px;text-decoration:none;}
+    .hero {padding:100px 20px;text-align:center;}
+    .hero h2 {font-size:40px;margin-bottom:20px;}
+    .hero p {font-size:18px;color:#cbd5f5;}
+    .btn {background:#38bdf8;color:#020617;padding:12px 25px;border-radius:8px;text-decoration:none;font-weight:bold;}
+    section {padding:60px 20px;max-width:1000px;margin:auto;}
+    .cards {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+    .card {background:#1e293b;padding:20px;border-radius:12px;}
+    footer {text-align:center;padding:20px;background:#020617;margin-top:40px;}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>StudMath</h1>
+  <nav>
+    <a href="#about">Qui suis-je</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h2>Maîtrise les mathématiques avec méthode</h2>
+  <p>Bootcamp intensif & cours premium pour lycéens</p>
+  <a href="#contact" class="btn">Réserver une séance</a>
+</div>
+
+<section id="about">
+  <h2>Qui suis-je</h2>
+  <p>Professeur de mathématiques expérimenté, spécialisé dans l'accompagnement des élèves en difficulté et l'excellence académique. Mon objectif est simple : transformer les maths en force.</p>
+</section>
+
+<section id="services">
+  <h2>Services</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Cours en groupe</h3>
+      <p>Apprentissage structuré en petits groupes pour maximiser les résultats.</p>
+    </div>
+    <div class="card">
+      <h3>Bootcamp été</h3>
+      <p>Programme intensif pour préparer la Terminale et prendre de l'avance.</p>
+    </div>
+    <div class="card">
+      <h3>Coaching personnalisé</h3>
+      <p>Suivi individuel adapté au niveau et aux objectifs de l'élève.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>WhatsApp : +212 XXX XXX XXX</p>
+  <p>Email : contact@studmath.com</p>
+</section>
+
+<footer>
+  <p>© 2026 StudMath - Tous droits réservés</p>
+</footer>
+
+</body>
+</html>
